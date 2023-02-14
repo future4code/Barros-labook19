@@ -1,0 +1,32 @@
+//-----CADASTRAR USUÁRIO -------------/
+POST http://localhost:3003/user/create 
+Content-Type: application/json 
+
+{
+    "name": "",
+    "email": "borges.dev@gmail.com",
+    "password": "1234ytuiysdsdi"
+}
+
+
+//OBTER TODOS OS USUÁRIOS -------------/
+###
+GET  http://localhost:3003/user/getAll 
+
+
+
+//CRIAR POSTAGEM --------------------- /
+###
+POST http://localhost:3003/task/create 
+Content-Type: application/json 
+
+{
+    "photo": "",
+    "description": "",
+    "type": "",
+    "authorId": "" 
+}
+
+
+//BUSCAR POSTAGEM POR ID --------------------- /
+

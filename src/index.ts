@@ -1,14 +1,18 @@
-import express, { Express, Request, Response } from "express"
-import cors from "cors"
-import knex from "knex"
-import dotenv from "dotenv"
-import Knex from "knex"
+import { app } from "./app"
+import { userRouter } from "./controller/routes/userRouter"
+
+
+
+
+app.use('/user', userRouter )
+
+
 
 /**************************** CONFIG ******************************/
 
-dotenv.config()
+/* dotenv.config()
 
-export const connection= knex({
+ export const connection= knex({
    client: "mysql",
    connection: {
       host: process.env.DB_HOST,
@@ -19,29 +23,38 @@ export const connection= knex({
       multipleStatements: true
    }
 })
+*/
 
-const app: Express = express()
-app.use(express.json())
-app.use(cors())
+//const app: Express = express()
+//app.use(express.json())
+//app.use(cors())
 
 /**************************** TYPES ******************************/
 
+/*
 type authenticationData = {
    id: string
 }
+*/
 
+/*
 type user = {
    id: string,
    name: string,
    email: string,
    password: string
 }
+*/
 
+/*
 enum POST_TYPES {
    NORMAL = "normal",
    EVENT = "event"
 }
 
+*/
+
+/*
 type post = {
    id: string,
    photo: string,
@@ -50,14 +63,17 @@ type post = {
    createdAt: Date,
    authorId: string
 }
-
+*/
 
 /**************************** ENDPOINTS ******************************/
 
+/*
 app.post('/users', async (req: Request, res: Response) => {
    try {
       let message = "Success!"
       const { name, email, password } = req.body
+   
+      
 
       if (!name || !email || !password) {
          res.statusCode = 406
@@ -84,6 +100,9 @@ app.post('/users', async (req: Request, res: Response) => {
    }
 })
 
+*/
+
+/*
 app.post('/post', async (req: Request, res: Response) => {
    try {
       let message = "Success!"
@@ -144,8 +163,9 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
    }
 })
 
+*/
 /**************************** SERVER INIT ******************************/
 
-app.listen(3003, () => {
-   console.log("Server running on port 3003")
-})
+//app.listen(3003, () => {
+//   console.log("Server running on port 3003")
+//})
