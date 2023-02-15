@@ -3,9 +3,9 @@ POST http://localhost:3003/user/create
 Content-Type: application/json 
 
 {
-    "name": "",
-    "email": "borges.dev@gmail.com",
-    "password": "1234ytuiysdsdi"
+    "name": "Guilherme Consuelo",
+    "email": "guilherme.dev@gmail.com",
+    "password": "sfsfcvvcvdsdiysdsdi"
 }
 
 
@@ -21,10 +21,12 @@ POST http://localhost:3003/task/create
 Content-Type: application/json 
 
 {
-    "photo": "",
-    "description": "",
-    "type": "",
-    "authorId": "" 
+    "id": "",
+    "photo": "foto número 2 do Romeu",
+    "description": "Nessa foto eu estava em um evento no MASP",
+    "type": "EVENT",
+    "created_at": "14/04/23",
+    "authorId": "d5dbfe8a-fb34-49f8-9a3f-67bbec8acb7a" 
 }
 
 

@@ -1,9 +1,8 @@
 import express from "express";
 import { UserBusiness } from "../../business/UserBusiness";
-import { UserDatabase } from "../../data/UserDatabase";
-import { generateId } from "../../services/idGenerator";
-
+import { UserDatabase } from "../../data/mySQL/UserDatabase";
 import { UserController } from "../UserController";
+import { generateId } from "../../services/idGenerator";
 
 export const userRouter = express.Router()
 

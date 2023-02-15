@@ -5,3 +5,13 @@ export type user = {
     password: string
  }
 
+ export interface UserInputDTO {
+    id: string,
+    name: string,
+    email: string,
+    password: string
+  }
+  
+  export type InputDTO = {
+  
+  }
