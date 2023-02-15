@@ -10,7 +10,7 @@ connection
          password VARCHAR(255) NOT NULL
       );
 
-      CREATE TABLE IF NOT EXISTS labook_posts(
+      CREATE TABLE IF NOT EXISTS labook_tasks(
          id VARCHAR(255) PRIMARY KEY,
          photo VARCHAR(255) NOT NULL,
          description VARCHAR(255) NOT NULL,

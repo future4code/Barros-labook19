@@ -1,12 +1,28 @@
-import { POST_TYPES } from "./post_types"
-
-export type post = {
+export type task = {
     id: string,
     photo: string,
     description: string,
     type: POST_TYPES,
-    createdAt: Date,
+    created_at: Date,
     authorId: string
  }
+
+ export interface TaskInputDTO {
+    id: string,
+    photo: string,
+    description: string,
+    type: POST_TYPES,
+    created_at: Date,
+    authorId: string
+  }
+  
+  export enum POST_TYPES {
+   NORMAL = "normal",
+   EVENT = "event"
+}
+
+  export type InputDTO = {
+  
+  }
 
  

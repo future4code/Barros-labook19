@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
-import { UserInputDTO } from "../model/userDTO";
+import { UserInputDTO } from "../model/user";
 
 export class UserController {
   constructor(private userBusiness: UserBusiness ) {}

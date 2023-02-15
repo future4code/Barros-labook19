@@ -1,5 +1,5 @@
 import { CustomError, InvalidEmail, InvalidPassword } from "../error/CustomError";
-import { UserInputDTO } from "../model/userDTO";
+import { UserInputDTO } from "../model/user";
 import { user } from "../model/user";
 import { generateId } from "../services/idGenerator";
 import { UserRepository } from "./UserRepository";
