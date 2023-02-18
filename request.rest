@@ -31,4 +31,6 @@ Content-Type: application/json
 
 
 //BUSCAR POSTAGEM POR ID --------------------- /
-
+###
+GET  http://localhost:3003/task/searchPost
+Content-Type: application/json

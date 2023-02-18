@@ -1,6 +1,6 @@
 import { generateId } from "../services/idGenerator";
 import { TaskDatabase } from "../data/mySQL/TaskDatabase";
-import { task, TaskInputDTO } from "../model/post";
+import { task, TaskInputDTO, TaskPostInputDTO } from "../model/post";
 import { CustomError } from "../error/CustomError";
 
 export class TaskBusiness {
@@ -30,5 +30,28 @@ export class TaskBusiness {
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
     }
-  };
+  }
+
+
+  public searchPost = async (input: TaskPostInputDTO) => {
+
+    try {
+
+      const {id} = input;
+
+      const taskDatabase = new TaskDatabase();
+
+
+        if (!id) {
+          throw new Error("Not Found!")
+        }
+
+        const returnPostId = await taskDatabase.searchPost(id)
+        return returnPostId;
+
+    } catch (error: any) {
+      throw new CustomError(error.statusCode, error.message)
+  }
+}
+  
 }
