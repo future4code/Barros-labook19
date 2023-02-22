@@ -38,8 +38,7 @@ Desenvolvimento do Backend de uma rede social nomeada Labook
 
 ##  🎯Objetivo do Projeto
 
-Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o principal objetivo é estudar e compreender :  MySQL ; Criação de Query, API, .......... 
-
+Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o principal objetivo é desenvolver o Backend de uma rede social.
 
 ## ☑️Requisitos de Funcionalidade
 
@@ -52,7 +51,8 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 
 ## 🔗Link para Acessar
 
-- **Documentação da API no Postman:** https://documenter.getpostman.com/view/22349688/2s93CLtZd3
+- **Link da Documentação Postman:** 
+    - https://documenter.getpostman.com/view/22349688/2s93CLtZd3
 
 - **Link do Deploy:** 
    
