@@ -71,11 +71,11 @@ Para Rodar o projeto, siga as seguintes etapas :
 - Rode o comando `npm install` para instalar as dependências do projeto
 - Adicione os dados de conexão do seu Banco de Dados em um arquivo `.env` com as seguintes variáveis:
 
-    `DB_HOST = ""
-     DB_USER = ""
-     DB_PASS = ""
-     DB_NAME = ""
-     PORT = 3003`
+    * `DB_HOST = `
+    * `DB_USER = `
+    * `DB_PASS = `
+    * `DB_NAME = `
+    * `PORT = 3306`
 
 - Rode o comando `npm run migrations` para criar as tabelas do projeto em seu banco de Dados
 - Rode o comando `npm start` no terminal para iniciar o projeto
