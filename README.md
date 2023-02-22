@@ -51,10 +51,10 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 
 ## 🔗Link para Acessar
 
-- **Link da Documentação Postman:** 
+- **Link da Documentação no Postman:** 
     - https://documenter.getpostman.com/view/22349688/2s93CLtZd3
 
-- **Link do Deploy:** 
+- **Link do Deploy no Render:** 
    
      - Pegar todos os usuários cadastrados: https://labook-rede-social.onrender.com/user/getAll
      - Criar/Cadastrar novo usuário: https://labook-rede-social.onrender.com/user/create
@@ -67,9 +67,18 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 
 Para Rodar o projeto, siga as seguintes etapas :
 
-- Rode o comando `npm install`
-- Adicione os dados de conexão do seu Banco de Dados em um arquivo .env
-- Rode o comando `npm start` no terminal
+- Clone esse repositório
+- Rode o comando `npm install` para instalar as dependências do projeto
+- Adicione os dados de conexão do seu Banco de Dados em um arquivo `.env` com as seguintes variáveis:
+
+    `DB_HOST = ""
+     DB_USER = ""
+     DB_PASS = ""
+     DB_NAME = ""
+     PORT = 3003`
+
+- Rode o comando `npm run migrations` para criar as tabelas do projeto em seu banco de Dados
+- Rode o comando `npm start` no terminal para iniciar o projeto
 
 
 ---
