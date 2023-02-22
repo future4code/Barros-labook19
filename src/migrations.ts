@@ -1,8 +1,7 @@
 
-import { connection } from "./index"
+import { connection } from "./connection"
 
-connection
-   .raw(`
+const createTablesDB = () => connection.raw(`
       CREATE TABLE IF NOT EXISTS labook_users(
          id VARCHAR(255) PRIMARY KEY,
          name VARCHAR(255) NOT NULL,
@@ -24,3 +23,5 @@ connection
     console.log(`Tables created successfully!`)
 })
 .catch((error: any) => console.log(error.sqlMessage || error.message))
+
+createTablesDB().then(() => connection.destroy())
