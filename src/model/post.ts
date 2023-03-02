@@ -16,13 +16,18 @@ export type task = {
     authorId: string
   }
   
+export interface TaskPostInputDTO {
+   id: string
+}
+
+
   export enum POST_TYPES {
    NORMAL = "normal",
    EVENT = "event"
 }
 
+
   export type InputDTO = {
   
   }
 
- 

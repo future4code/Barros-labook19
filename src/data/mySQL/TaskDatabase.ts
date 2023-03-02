@@ -1,5 +1,6 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { task } from "../../model/post";
+import { CustomError } from "../../error/CustomError";
 
 export class TaskDatabase extends BaseDatabase {
 
@@ -16,5 +17,22 @@ export class TaskDatabase extends BaseDatabase {
             author_id: task.authorId
          })
    }
+
+
+async searchPost (id: string) {
+   try {
+
+       const returnPostId: any = await this.connection('labook_tasks')
+       .select("*")
+       .where({id})
+
+       return returnPostId;
+
+       
+
+   } catch (error:any) {
+       throw new CustomError(error.statusCode, error.message);
+   }
 }
+}   
 
