@@ -1,12 +1,12 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { task } from "../../model/post";
 import { CustomError } from "../../error/CustomError";
+import { TaskRepository } from "../../business/TaskRepository";
 
-export class TaskDatabase extends BaseDatabase {
+export class TaskDatabase extends BaseDatabase implements TaskRepository {
 
-   public insertTask = async (
-      task: task
-   ) => {
+   public createTask = async (task: task):Promise<void> => {
+      try {
       await TaskDatabase.connection('labook_tasks')
          .insert({
             id: task.id,
@@ -16,23 +16,24 @@ export class TaskDatabase extends BaseDatabase {
             created_at: task.created_at,
             author_id: task.authorId
          })
-   }
+         .into("labook_tasks");
+    } catch (error: any) {
+      throw new CustomError(error.statusCode, error.message);
+    }
+   };
 
 
-async searchPost (id: string) {
-   try {
+   public searchPost = async (): Promise<task[]> => {
+      try {
+         const returnPostId = await TaskDatabase.connection
+         .select("*")
+         .from("labook_tasks")
+         .where({});
 
-       const returnPostId: any = await this.connection('labook_tasks')
-       .select("*")
-       .where({id})
-
-       return returnPostId;
-
-       
-
-   } catch (error:any) {
-       throw new CustomError(error.statusCode, error.message);
-   }
-}
+         return returnPostId;
+      }  catch (error:any) {
+         throw new CustomError(error.statusCode, error.message);
+      }
+   };
 }   
 

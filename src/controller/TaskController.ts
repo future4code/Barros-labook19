@@ -3,7 +3,9 @@ import { TaskBusiness } from "../business/TaskBusiness";
 import { TaskInputDTO, TaskPostInputDTO } from "../model/post";
 
 export class TaskController {
-  public createTask = async (req: Request, res: Response) => {
+  constructor(private TaskBusiness: TaskBusiness ) {}
+
+  public createTask = async (req: Request, res: Response):Promise<void> => {
     try {
       const { photo, description, type,  created_at, authorId } = req.body;
 
@@ -18,16 +20,15 @@ export class TaskController {
         authorId,
       };
 
-      const taskBusiness = new TaskBusiness();
-      await taskBusiness.createTask(input);
+      await this.TaskBusiness.createTask(input);
 
       res.status(201).send({ message: "Postagem criada com sucesso!" });
     } catch (error: any) {
       res.status(400).send(error.message);
     }
-  }
+  };
 
-  public searchPost = async (req: Request, res: Response) => {
+  public searchPost = async (req: Request, res: Response):Promise<void> => {
     try {
 
       let message = "Sucesso!"
@@ -35,11 +36,11 @@ export class TaskController {
         id: req.params.id
       }
      
-      const returnPostId = await TaskBusiness.searchPost(input)
+      const tasks = await this.TaskBusiness.searchPost(input)
 
-      res.status(201).send({ message: "Sucesso!" });
+      res.status(201).send({ tasks });
     } catch (error: any) {
-      res.status(400).send(error.message);
+      res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+    }
   }
-  }
-};
+}
