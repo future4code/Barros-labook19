@@ -1,9 +1,12 @@
 import { generateId } from "../services/idGenerator";
-import { TaskDatabase } from "../data/mySQL/TaskDatabase";
 import { task, TaskInputDTO, TaskPostInputDTO } from "../model/post";
 import { CustomError } from "../error/CustomError";
+import { TaskRepository } from "./TaskRepository";
 
 export class TaskBusiness {
+  taskDatabase: any;
+  constructor(private TaskDatabase: TaskRepository){}
+
   public createTask = async (input: TaskInputDTO) => {
     try {
       const { photo, description, type, created_at, authorId } = input;
@@ -16,7 +19,7 @@ export class TaskBusiness {
 
       const id: string = generateId();
 
-      const taskDatabase = new TaskDatabase();
+      
       const task: task = {
         id,
         photo,
@@ -26,7 +29,7 @@ export class TaskBusiness {
         authorId,
       }
 
-      await taskDatabase.insertTask(task);
+      await this.TaskDatabase.createTask(task)
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
     }
@@ -37,21 +40,10 @@ export class TaskBusiness {
 
     try {
 
-      const {id} = input;
-
-      const taskDatabase = new TaskDatabase();
-
-
-        if (!id) {
-          throw new Error("Not Found!")
-        }
-
-        const returnPostId = await taskDatabase.searchPost(id)
-        return returnPostId;
+      return await this. TaskDatabase.searchPost();
 
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
+    } 
   }
-}
-  
 }

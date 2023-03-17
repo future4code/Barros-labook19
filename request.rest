@@ -3,8 +3,8 @@ POST http://localhost:3003/user/create
 Content-Type: application/json 
 
 {
-    "name": "Guilherme Consuelo",
-    "email": "guilherme.dev@gmail.com",
+    "name": "Guilherme0005 Consuelo",
+    "email": "guilherme555.dev@gmail.com",
     "password": "sfsfcvvcvdsdiysdsdi"
 }
 
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 {
     "id": "",
-    "photo": "foto número 2 do Romeu",
+    "photo": "222foto número 2 do Romeu",
     "description": "Nessa foto eu estava em um evento no MASP",
     "type": "EVENT",
     "created_at": "14/04/23",
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 
-//BUSCAR POSTAGEM POR ID --------------------- /
+//BUSCAR POSTAGEM ------------------------------ /
 ###
 GET  http://localhost:3003/task/searchPost
 Content-Type: application/json
