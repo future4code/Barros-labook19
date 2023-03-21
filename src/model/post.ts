@@ -18,6 +18,7 @@ export type task = {
   
 export interface TaskPostInputDTO {
    id: string
+
 }
 
 
@@ -31,3 +32,11 @@ export interface TaskPostInputDTO {
   
   }
 
+  export type returnPostId = {
+   id: string,
+   photo: string,
+   description: string,
+   type: POST_TYPES,
+   created_at: Date,
+   authorId: string
+}

@@ -2,14 +2,17 @@ import { Request, Response } from "express";
 import { TaskBusiness } from "../business/TaskBusiness";
 import { TaskInputDTO, TaskPostInputDTO } from "../model/post";
 
+
 export class TaskController {
-  constructor(private TaskBusiness: TaskBusiness ) {}
+  constructor(private taskBusiness: TaskBusiness ) {}
+
 
   public createTask = async (req: Request, res: Response):Promise<void> => {
     try {
-      const { photo, description, type,  created_at, authorId } = req.body;
+      const { id, photo, description, type,  created_at, authorId } = req.body;
 
-      const postId: string = Date.now().toString()
+      const postId: any = Date.now().toString()
+     
 
       const input: TaskInputDTO = {
         id:postId,
@@ -17,10 +20,10 @@ export class TaskController {
         description,
         type,
         created_at,
-        authorId,
+        authorId
       };
 
-      await this.TaskBusiness.createTask(input);
+      await this.taskBusiness.createTask(input);
 
       res.status(201).send({ message: "Postagem criada com sucesso!" });
     } catch (error: any) {
@@ -28,15 +31,14 @@ export class TaskController {
     }
   };
 
-  public searchPost = async (req: Request, res: Response):Promise<void> => {
+  public searchPost = async (req: Request, res: Response) => {
     try {
 
-      let message = "Sucesso!"
-      const input: TaskPostInputDTO = {
-        id: req.params.id
-      }
+   
+      const id: string = req.params.id
+
      
-      const tasks = await this.TaskBusiness.searchPost(input)
+      const tasks = await this.taskBusiness.searchPost(id)
 
       res.status(201).send({ tasks });
     } catch (error: any) {
