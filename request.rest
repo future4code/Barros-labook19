@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "name": "Guilherme0005 Consuelo",
-    "email": "guilherme555.dev@gmail.com",
+    "email": "fggfggfgfksdgukguilherme555.dev@gmail.com",
     "password": "sfsfcvvcvdsdiysdsdi"
 }
 
@@ -22,15 +22,14 @@ Content-Type: application/json
 
 {
     "id": "",
-    "photo": "222foto número 2 do Romeu",
+    "photo": "22c2foto número 2 do Romeu",
     "description": "Nessa foto eu estava em um evento no MASP",
     "type": "EVENT",
     "created_at": "14/04/23",
-    "authorId": "d5dbfe8a-fb34-49f8-9a3f-67bbec8acb7a" 
+    "authorId": "018ff005-1c84-40cd-87ed-477f6fe72c1c" 
 }
 
 
 //BUSCAR POSTAGEM ------------------------------ /
 ###
-GET  http://localhost:3003/task/searchPost
-Content-Type: application/json
+GET  http://localhost:3003/task/searchPost/27255ea5-cc54-43b4-96f4-2bb73b7534a7
