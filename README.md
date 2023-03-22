@@ -45,10 +45,10 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 - [x] Pegar todos os usuários cadastrados
 - [x] Criar/Cadastrar novo usuário
 - [x] Criar nova Postagem
+- [x] Buscar uma postagem por id
 
 ## ☑️Próximos passos
 
-- [ ] Buscar uma postagem por id
 - [ ] Fazer amizade
 - [ ] Desfazer Amizade
 - [ ] Ver todo o Feed
