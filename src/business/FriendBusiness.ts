@@ -22,8 +22,8 @@ export class FriendBusiness {
       
       const friend: friend = {
         id,
-        user,
-        create_friend
+        id_user,
+        id_friend
       }
 
 

@@ -37,12 +37,11 @@ GET  http://localhost:3003/task/searchPost/27255ea5-cc54-43b4-96f4-2bb73b7534a7
 
 //CRIAR AMIGOS --------------------- /
 ###
-
 POST http://localhost:3003/friend/create 
 Content-Type: application/json 
 
 {
     "id": "",
-    "id_user": "0f9ba8fe-1ef5-4aca-aaaf-c649f7692767",
-    "id_friend": "d5dbfe8a-fb34-49f8-9a3f-67bbec8acb7a"
+    "id_user": "4a7c6c78-5ad5-4cc3-b231-30be604f06bc",
+    "id_friend": "53937135-41b8-493d-adb2-284df8d74c55"
 }

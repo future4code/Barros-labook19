@@ -21,7 +21,7 @@ export class FriendController {
 
       await this.friendBusiness.createFriend(input);
 
-      res.status(201).send({ message: "Postagem criada com sucesso!" });
+      res.status(201).send({ message: "Amigo criado com sucesso!" });
     } catch (error: any) {
       res.status(400).send(error.message);
     }
