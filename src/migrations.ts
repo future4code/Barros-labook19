@@ -20,11 +20,11 @@ const createTablesDB = () => connection.raw(`
       );
 
          CREATE TABLE IF NOT EXISTS labook_friends(
-         user VARCHAR(255),
-         create_friend VARCHAR(255),
-         PRIMARY KEY(user,create_friend),
-         FOREIGN KEY(user) REFERENCES labook_users(id),
-         FOREIGN KEY(create_friend) REFERENCES labook_users(id)
+         id VARCHAR(255) PRIMARY KEY, 
+         id_user VARCHAR(255),
+         id_friend VARCHAR(255),
+         FOREIGN KEY(id_user) REFERENCES labook_users(id),
+         FOREIGN KEY(id_friend) REFERENCES labook_users(id)
        )
       
    `)
@@ -34,3 +34,5 @@ const createTablesDB = () => connection.raw(`
 .catch((error: any) => console.log(error.sqlMessage || error.message))
 
 createTablesDB().then(() => connection.destroy())
+
+// id VARCHAR(255) PRIMARY KEY(user,create_friend)
