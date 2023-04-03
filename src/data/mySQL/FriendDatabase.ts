@@ -1,5 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { friend } from "../../model/friend";
+import { friend, unfriend } from "../../model/friend";
 import { CustomError } from "../../error/CustomError";
 import { FriendRepository } from "../../business/FriendRepository";
 
@@ -22,18 +22,18 @@ export class FriendDatabase extends BaseDatabase implements FriendRepository {
     }
    };
 
-   /*
-   public searchPost = async(id: string): Promise<task[]> => {
+   
+   public unFriend = async(id: string): Promise<void> => {
       try {
-         const returnPostId = await TaskDatabase.connection
+         const unfriend = await FriendDatabase.connection
+         .delete()
          .where({id})
-         .into('labook_tasks')
+         .into('labook_friends')
 
-         return returnPostId;
 
       }  catch (error:any) {
          throw new CustomError(error.statusCode, error.message);
       }
-   }; */
+   }; 
 }   
 

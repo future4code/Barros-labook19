@@ -10,3 +10,8 @@ export type friend = {
    id_friend: string
   }
   
+  export type unfriend = {
+    id: string,
+    id_user: string,
+    id_friend: string
+ }

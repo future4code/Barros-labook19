@@ -16,4 +16,7 @@ const friendController = new FriendController(friendBusiness)
 
 
 friendRouter.post("/create", (req, res) => friendController.createFriend(req, res))
+
+friendRouter.post("/unFriend", (req, res) => friendController.unFriend(req, res))
+
 //friendRouter.get("/searchFriend/:id", (req, res) => friendController.searchFriend(req, res))

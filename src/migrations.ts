@@ -34,5 +34,3 @@ const createTablesDB = () => connection.raw(`
 .catch((error: any) => console.log(error.sqlMessage || error.message))
 
 createTablesDB().then(() => connection.destroy())
-
-// id VARCHAR(255) PRIMARY KEY(user,create_friend)

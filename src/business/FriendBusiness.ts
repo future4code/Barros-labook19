@@ -1,5 +1,5 @@
 import { generateId } from "../services/idGenerator";
-import { friend, FriendInputDTO } from "../model/friend";
+import { friend, FriendInputDTO, unfriend } from "../model/friend";
 import { CustomError } from "../error/CustomError";
 import { FriendRepository } from "./FriendRepository";
 import { FriendDatabase } from "../data/mySQL/FriendDatabase";
@@ -33,19 +33,18 @@ export class FriendBusiness {
     }
   }
 
-/*
-  public searchPost = async (id: string) => {
+
+  public unFriend = async (id: string) => {
 
     try {
 
-      const task = new TaskDatabase()
-      const result = await task.searchPost(id)
+      const unfriend = new FriendDatabase()
+      const result = await unfriend.unFriend(id)
 
-      return result
 
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
     } 
   }
-*/
+
 }

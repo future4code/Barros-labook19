@@ -45,3 +45,13 @@ Content-Type: application/json
     "id_user": "4a7c6c78-5ad5-4cc3-b231-30be604f06bc",
     "id_friend": "53937135-41b8-493d-adb2-284df8d74c55"
 }
+
+//DESFAZER AMIZADE --------------------- /
+###
+POST  http://localhost:3003/friend/unfriend
+Content-Type: application/json 
+
+{
+    "id_user": "4a7c6c78-5ad5-4cc3-b231-30be604f06bc",
+    "id_friend": "53937135-41b8-493d-adb2-284df8d74c55"
+}
