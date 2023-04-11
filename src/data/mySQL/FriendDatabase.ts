@@ -1,10 +1,13 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { friend } from "../../model/friend";
+import { friend, unfriend } from "../../model/friend";
 import { CustomError } from "../../error/CustomError";
 import { FriendRepository } from "../../business/FriendRepository";
 
 
 export class FriendDatabase extends BaseDatabase implements FriendRepository {
+   static unFriend(unfriend: unfriend) {
+     throw new Error("Method not implemented.");
+   }
 
 
 
@@ -22,18 +25,21 @@ export class FriendDatabase extends BaseDatabase implements FriendRepository {
     }
    };
 
-   /*
-   public searchPost = async(id: string): Promise<task[]> => {
-      try {
-         const returnPostId = await TaskDatabase.connection
-         .where({id})
-         .into('labook_tasks')
+   
+   public unFriend = async(id:string): Promise<void> => {
 
-         return returnPostId;
+
+   let input = {}
+      try {
+         
+         await FriendDatabase.connection('labook_friends')
+         .delete()
+         .where({id});
+         
 
       }  catch (error:any) {
          throw new CustomError(error.statusCode, error.message);
       }
-   }; */
+   }; 
 }   
 

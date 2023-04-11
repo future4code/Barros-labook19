@@ -1,6 +1,6 @@
-import { friend } from "../model/friend"
+import { friend, unfriend } from "../model/friend"
 
 export interface FriendRepository {
     createFriend(friend: friend):Promise<void> 
- // searchPost(id: string): Promise<any> 
+    unFriend(id:string): Promise<void> 
 }

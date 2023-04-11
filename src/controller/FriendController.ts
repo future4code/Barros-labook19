@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { FriendBusiness } from "../business/FriendBusiness";
-import { FriendInputDTO } from "../model/friend";
+import { FriendInputDTO, unfriend } from "../model/friend";
 
 
 export class FriendController {
@@ -13,7 +13,6 @@ export class FriendController {
 
 
       const input: FriendInputDTO = {
-        id,
         id_user,
         id_friend
       };
@@ -27,21 +26,24 @@ export class FriendController {
     }
   };
 
-/*
-  public searchPost = async (req: Request, res: Response) => {
+  public unFriend = async (req: Request, res: Response) => {
     try {
 
-   
-      const id: string = req.params.id
+      const { id_user, id_friend} = req.body;
 
-     
-      const tasks = await this.taskBusiness.searchPost(id)
+      const input: FriendInputDTO = {
+        id_user,
+        id_friend
+      };
 
-      res.status(201).send({ tasks });
+    
+
+      await this.friendBusiness.unFriend(req.params.id)
+
+      res.status(201).send({ message: "Amizade desfeita com sucesso!" });
     } catch (error: any) {
       res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
     }
   }
-*/
 
 }
