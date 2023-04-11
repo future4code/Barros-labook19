@@ -5,12 +5,11 @@ export type friend = {
  }
 
  export interface FriendInputDTO {
-   id: string,
    id_user: string,
    id_friend: string
   }
   
-  export type unfriend = {
+export type unfriend = {
     id: string,
     id_user: string,
     id_friend: string

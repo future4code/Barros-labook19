@@ -5,6 +5,9 @@ import { FriendRepository } from "../../business/FriendRepository";
 
 
 export class FriendDatabase extends BaseDatabase implements FriendRepository {
+   static unFriend(unfriend: unfriend) {
+     throw new Error("Method not implemented.");
+   }
 
 
 
@@ -23,13 +26,16 @@ export class FriendDatabase extends BaseDatabase implements FriendRepository {
    };
 
    
-   public unFriend = async(id: string): Promise<void> => {
-      try {
-         const unfriend = await FriendDatabase.connection
-         .delete()
-         .where({id})
-         .into('labook_friends')
+   public unFriend = async(id:string): Promise<void> => {
 
+
+   let input = {}
+      try {
+         
+         await FriendDatabase.connection('labook_friends')
+         .delete()
+         .where({id});
+         
 
       }  catch (error:any) {
          throw new CustomError(error.statusCode, error.message);

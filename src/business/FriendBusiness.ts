@@ -33,18 +33,36 @@ export class FriendBusiness {
     }
   }
 
+  public unFriend = async (id:string): Promise<void> => {
+    try {
+      
 
-  public unFriend = async (id: string) => {
+
+
+
+      
+   
+
+
+      await this.friendDatabase.unFriend(id)
+    } catch (error: any) {
+      throw new CustomError(error.statusCode, error.message)
+    }
+  }
+
+
+  /*
+  public unFriend = async (id: string): Promise<void> => {
 
     try {
 
       const unfriend = new FriendDatabase()
-      const result = await unfriend.unFriend(id)
-
-
+   
+      await FriendDatabase.unFriend(id);
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
     } 
-  }
+  } */
 
 }
+

@@ -13,7 +13,6 @@ export class FriendController {
 
 
       const input: FriendInputDTO = {
-        id,
         id_user,
         id_friend
       };
@@ -30,7 +29,16 @@ export class FriendController {
   public unFriend = async (req: Request, res: Response) => {
     try {
 
-      await this.friendBusiness.unFriend
+      const { id_user, id_friend} = req.body;
+
+      const input: FriendInputDTO = {
+        id_user,
+        id_friend
+      };
+
+    
+
+      await this.friendBusiness.unFriend(req.params.id)
 
       res.status(201).send({ message: "Amizade desfeita com sucesso!" });
     } catch (error: any) {
