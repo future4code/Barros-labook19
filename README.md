@@ -47,10 +47,10 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 - [x] Criar nova Postagem
 - [x] Buscar uma postagem por id
 - [x] Fazer amizade
+- [x] Desfazer Amizade
 
 ## ☑️Próximos passos
 
-- [ ] Desfazer Amizade
 - [ ] Ver todo o Feed
 
 ---
