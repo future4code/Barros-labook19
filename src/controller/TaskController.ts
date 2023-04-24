@@ -45,4 +45,17 @@ export class TaskController {
       res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
     }
   }
+
+  public getAllPosts = async (req: Request, res: Response) => {
+    try {
+
+   
+
+      const tasks = await this.taskBusiness.getAllPosts()
+
+      res.status(201).send({ tasks });
+    } catch (error: any) {
+      res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+    }
+  }
 }

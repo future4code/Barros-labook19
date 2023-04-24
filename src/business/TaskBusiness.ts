@@ -49,4 +49,20 @@ export class TaskBusiness {
       throw new CustomError(error.statusCode, error.message)
     } 
   }
+
+  
+  public getAllPosts = async (): Promise<task[]> => {
+
+    try {
+
+      const task = new TaskDatabase()
+
+      const result = await task.getAllPosts()
+
+      return result;
+
+    } catch (error: any) {
+      throw new CustomError(error.statusCode, error.message)
+    } 
+  }
 }
