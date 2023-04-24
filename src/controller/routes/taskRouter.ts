@@ -18,3 +18,4 @@ const taskController = new TaskController(taskBusiness)
 
 taskRouter.post("/create", (req, res) => taskController.createTask(req, res))
 taskRouter.get("/searchPost/:id", (req, res) => taskController.searchPost(req, res))
+taskRouter.get("/getAllPosts", (req, res) => taskController.getAllPosts(req, res))

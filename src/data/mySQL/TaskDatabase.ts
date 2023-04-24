@@ -38,5 +38,20 @@ export class TaskDatabase extends BaseDatabase implements TaskRepository {
          throw new CustomError(error.statusCode, error.message);
       }
    };
+
+
+   public getAllPosts = async(): Promise<task[]> => {
+      try {
+         const returnAllPosts = await TaskDatabase.connection
+         .select('*')
+         .into('labook_tasks')
+
+         return returnAllPosts;
+
+      }  catch (error:any) {
+         throw new CustomError(error.statusCode, error.message);
+      }
+   };
+
 }   
 

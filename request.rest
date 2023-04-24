@@ -30,9 +30,15 @@ Content-Type: application/json
 }
 
 
-//BUSCAR POSTAGEM ------------------------------ /
+//BUSCAR POSTAGEM POR ID ------------------------------ /
 ###
 GET  http://localhost:3003/task/searchPost/27255ea5-cc54-43b4-96f4-2bb73b7534a7
+
+
+
+//BUSCAR TODAS AS POSTAGENS ------------------------------ /
+###
+GET  http://localhost:3003/task/getAllPosts
 
 
 //CRIAR AMIGOS --------------------- /
