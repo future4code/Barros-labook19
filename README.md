@@ -46,12 +46,13 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 - [x] Criar/Cadastrar novo usuário
 - [x] Criar nova Postagem
 - [x] Buscar uma postagem por id
+- [x] Ver todo o Feed
 - [x] Fazer amizade
 - [x] Desfazer Amizade
 
 ## ☑️Próximos passos
 
-- [ ] Ver todo o Feed
+Documentar
 
 ---
 
