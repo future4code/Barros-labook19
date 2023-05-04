@@ -3,9 +3,9 @@ POST http://localhost:3003/user/create
 Content-Type: application/json 
 
 {
-    "name": "Guilherme0005 Consuelo",
-    "email": "fggfggfgfksdgukguilherme555.dev@gmail.com",
-    "password": "sfsfcvvcvdsdiysdsdi"
+    "name": "testePasswordCriptografado",
+    "email": "testepassword@gmail.com",
+    "password": "12345678910"
 }
 
 

@@ -2,6 +2,7 @@ import { CustomError, InvalidEmail, InvalidPassword } from "../error/CustomError
 import { UserInputDTO } from "../model/user";
 import { user } from "../model/user";
 import { generateId } from "../services/idGenerator";
+import { HashManager } from "../services/hashManager";
 import { UserRepository } from "./UserRepository";
 
 
@@ -29,12 +30,15 @@ export class UserBusiness {
        }
            
            const id: string = generateId()
+
+           const hashManager = new HashManager()
+           const encryptedPassword = await hashManager.hash(input.password);
            
-           const user:user = {
+           const user: user = {
               id,
-              name,
-              email,
-              password
+              name: input.name,
+              email: input.email,
+              password:encryptedPassword 
            }
 
            await this.userDatabase.insertUser(user)
