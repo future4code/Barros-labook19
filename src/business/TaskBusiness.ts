@@ -1,8 +1,9 @@
 import { generateId } from "../services/idGenerator";
-import { task, TaskInputDTO, TaskPostInputDTO } from "../model/post";
-import { CustomError } from "../error/CustomError";
+import { POST_TYPES, task, TaskInputDTO, TaskPostInputDTO } from "../model/post";
+import { CustomError, ErrorType } from "../error/CustomError";
 import { TaskRepository } from "./TaskRepository";
 import { TaskDatabase } from "../data/mySQL/TaskDatabase";
+import chalk from "chalk";
 
 export class TaskBusiness {
 
@@ -10,13 +11,39 @@ export class TaskBusiness {
   public createTask = async (input: TaskInputDTO) => {
     try {
       const { photo, description, type, created_at, authorId } = input;
+      
 
       if (!description) {
         throw new Error(
-          '"description", "type" e "authorId" são obrigatórios'
+           'Erro: O campo "description" está vazio! Preencha a descrição da postagem'
         );
       }
 
+      if (!photo) {
+        throw new Error(
+          'Erro: O campo "photo" está vazio. Adicione uma foto para criar uma postagem'
+        );
+      }
+
+      if (!authorId) {
+        throw new Error(
+          'Erro: O campo "authorId" está vazio!\nAdicione o ID do autor da postagem para criar uma postagem'
+        );
+      }
+
+      if (!type) {
+        throw new Error(
+          'O tipo está vazio. Preencha "type" com "normal" ou "event"'
+        );
+      }
+
+      if (type != 'normal' && type != 'event') {
+        throw new Error(
+          'Erro de tipo. Preencha "type" com "normal" ou "event""'
+        );
+      }
+
+ 
       const id: string = generateId();
 
       
@@ -66,3 +93,5 @@ export class TaskBusiness {
     } 
   }
 }
+
+
