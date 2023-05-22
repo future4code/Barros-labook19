@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { TaskBusiness } from "../business/TaskBusiness";
-import { TaskInputDTO, TaskPostInputDTO } from "../model/post";
+import { TaskInputDTO } from "../model/post";
 
 
 export class TaskController {

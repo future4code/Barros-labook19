@@ -54,4 +54,3 @@ export class TaskDatabase extends BaseDatabase implements TaskRepository {
    };
 
 }   
-

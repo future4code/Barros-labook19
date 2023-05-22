@@ -47,6 +47,8 @@ export class UserBusiness {
            throw new CustomError(error.statusCode, error.message)
         }
   }
+
+  
   public getUsers = async () => {
 
      try {
@@ -60,4 +62,3 @@ export class UserBusiness {
      }
   }
 }
-
