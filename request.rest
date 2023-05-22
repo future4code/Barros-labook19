@@ -22,9 +22,9 @@ Content-Type: application/json
 
 {
     "id": "",
-    "photo": "22crfrg2foto número 2 do Romeu",
-    "description": "Nessa foto eu estava em um evento no MASP",
-    "type": "EVENT",
+    "photo": "dgg",
+    "description": "ghj",
+    "type": "normal",
     "created_at": "14/04/23",
     "authorId": "018ff005-1c84-40cd-87ed-477f6fe72c1c" 
 }

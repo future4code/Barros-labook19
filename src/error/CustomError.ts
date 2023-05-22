@@ -22,3 +22,10 @@ export class InvalidPassword extends CustomError{
         super(400, "Digite uma senha")
     }
 }
+
+export class ErrorType extends CustomError{ 
+    constructor(){
+        super(422, "Preencha o 'type' com os tipos de postagem 'normal' ou 'event'")
+    }
+}
+
