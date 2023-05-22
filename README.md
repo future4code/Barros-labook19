@@ -32,7 +32,7 @@ Desenvolvimento do Backend de uma rede social nomeada Labook
 ---
 ##  🧭Status do Projeto
 
- - ⏳ Fazendo
+ - ⏳ Finalizado
 
 ---
 
@@ -50,10 +50,6 @@ Este é um projeto de Back-end, desenvolvido no bootcamp da Labenu, cujo o princ
 - [x] Fazer amizade
 - [x] Desfazer Amizade
 
-## ☑️Próximos passos
-
-Documentar
-
 ---
 
 ## 🔗Link para Acessar
@@ -63,9 +59,7 @@ Documentar
 
 - **Link do Deploy no Render:** 
    
-     - Pegar todos os usuários cadastrados: https://labook-rede-social.onrender.com/user/getAll
-     - Criar/Cadastrar novo usuário: https://labook-rede-social.onrender.com/user/create
-     - Criar nova Postagem: https://labook-rede-social.onrender.com/task/create
+     - https://labook-19-5.onrender.com
 
 ---
 
