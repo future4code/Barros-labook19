@@ -42,4 +42,3 @@ export class FriendDatabase extends BaseDatabase implements FriendRepository {
       }
    }; 
 }   
-

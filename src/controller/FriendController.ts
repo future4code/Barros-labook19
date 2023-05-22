@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { FriendBusiness } from "../business/FriendBusiness";
-import { FriendInputDTO, unfriend } from "../model/friend";
+import { FriendInputDTO } from "../model/friend";
 
 
 export class FriendController {
@@ -9,7 +9,7 @@ export class FriendController {
 
   public createFriend = async (req: Request, res: Response):Promise<void> => {
     try {
-      const { id, id_user, id_friend} = req.body;
+      const { id_user, id_friend} = req.body;
 
 
       const input: FriendInputDTO = {
@@ -37,7 +37,6 @@ export class FriendController {
       };
 
     
-
       await this.friendBusiness.unFriend(req.params.id)
 
       res.status(201).send({ message: "Amizade desfeita com sucesso!" });

@@ -1,4 +1,4 @@
-import { friend, unfriend } from "../model/friend"
+import { friend} from "../model/friend"
 
 export interface FriendRepository {
     createFriend(friend: friend):Promise<void> 

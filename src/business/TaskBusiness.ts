@@ -1,9 +1,8 @@
 import { generateId } from "../services/idGenerator";
-import { POST_TYPES, task, TaskInputDTO, TaskPostInputDTO } from "../model/post";
-import { CustomError, ErrorType } from "../error/CustomError";
+import { task, TaskInputDTO } from "../model/post";
+import { CustomError} from "../error/CustomError";
 import { TaskRepository } from "./TaskRepository";
 import { TaskDatabase } from "../data/mySQL/TaskDatabase";
-import chalk from "chalk";
 
 export class TaskBusiness {
 
@@ -93,5 +92,3 @@ export class TaskBusiness {
     } 
   }
 }
-
-

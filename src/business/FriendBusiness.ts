@@ -1,8 +1,7 @@
 import { generateId } from "../services/idGenerator";
-import { friend, FriendInputDTO, unfriend } from "../model/friend";
+import { friend, FriendInputDTO } from "../model/friend";
 import { CustomError } from "../error/CustomError";
 import { FriendRepository } from "./FriendRepository";
-import { FriendDatabase } from "../data/mySQL/FriendDatabase";
 
 export class FriendBusiness {
 
@@ -26,7 +25,6 @@ export class FriendBusiness {
         id_friend
       }
 
-
       await this.friendDatabase.createFriend(friend)
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
@@ -36,33 +34,10 @@ export class FriendBusiness {
   public unFriend = async (id:string): Promise<void> => {
     try {
       
-
-
-
-
-      
-   
-
-
       await this.friendDatabase.unFriend(id)
     } catch (error: any) {
       throw new CustomError(error.statusCode, error.message)
     }
   }
 
-
-  /*
-  public unFriend = async (id: string): Promise<void> => {
-
-    try {
-
-      const unfriend = new FriendDatabase()
-   
-      await FriendDatabase.unFriend(id);
-    } catch (error: any) {
-      throw new CustomError(error.statusCode, error.message)
-    } 
-  } */
-
 }
-
